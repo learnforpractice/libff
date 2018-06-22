@@ -51,6 +51,14 @@ add_library(
 
   ${FF_EXTRASRCS}
 )
+
+if( APPLE )
+    # Apple Specific Options Here
+else( APPLE )
+    # Linux Specific Options Here
+    target_compile_options(ff PRIVATE -fPIC -std=c++11)
+endif ( APPLE )
+
 target_link_libraries(
   ff
 
